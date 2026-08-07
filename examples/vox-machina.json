@@ -1,0 +1,621 @@
+{
+  "world": {
+    "id": "__vox_world__",
+    "type": "world",
+    "parentId": null,
+    "name": "Exandria — Campaign One (Season 1)",
+    "description": "The world of Exandria during the events of Campaign One of Critical Role, Season 1. Vox Machina must uncover the truth behind the mysterious Lord and Lady Briarwood and liberate the city-state of Whitestone from their vampiric grip. Twelve episodes of blood, fire, and found family.",
+    "imageUrl": "examples/images/world-exandria.png",
+    "position": { "x": 50, "y": 50 },
+    "attributes": {
+      "Setting": "Exandria",
+      "Campaign": "Critical Role Campaign One",
+      "Season": "1 — Briarwood Arc",
+      "System": "D&D 5th Edition",
+      "Animated Series": "The Legend of Vox Machina (Amazon Prime, 2022)"
+    },
+    "tags": ["Critical Role", "Campaign One", "Season 1", "Exandria", "Vox Machina"],
+    "gmNotes": "Season 1 covers Episodes 1–12. Episodes 1–2 are the pre-arc setup (monster in Emon farmlands). Episodes 3–4 are the Briarwood dinner confrontation in Emon. Episodes 5–12 are the full Whitestone liberation arc.",
+    "createdAt": "2022-01-28T00:00:00.000Z",
+    "updatedAt": "2022-01-28T00:00:00.000Z"
+  },
+  "entities": [
+    {
+      "id": "__region_taldorei__",
+      "type": "region",
+      "parentId": null,
+      "name": "Tal'Dorei",
+      "description": "The continent of Tal'Dorei, home to the great capital city of Emon and the independent mountain city-state of Whitestone. A land of diverse peoples, ancient magic, and dangerous monsters — recently unified under the governance of the Tal'Dorei Council, though fragile alliances and festering conspiracies threaten its stability.",
+      "imageUrl": "examples/images/region-taldorei.jpg",
+      "position": { "x": 45, "y": 42 },
+      "attributes": {
+        "Type": "Continent",
+        "Capital": "Emon",
+        "Ruler": "Sovereign Uriel Tal'Dorei III",
+        "Governing Body": "Tal'Dorei Council"
+      },
+      "tags": ["Continent", "Tal'Dorei", "Campaign One"],
+      "gmNotes": "The Tal'Dorei Campaign Setting details this continent in full. Two key areas dominate Season 1: the Bladeshimmer Shoreline to the west (Emon) and the Alabaster Sierras to the north (Whitestone).",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__region_bladeshimmer__",
+      "type": "region",
+      "parentId": "__region_taldorei__",
+      "name": "Bladeshimmer Shoreline",
+      "description": "The glittering western coast of Tal'Dorei, dominated by trade routes and the great capital city of Emon. The Bladeshimmer waters reflect silver in the sun, giving the coastline its name. The region is Tal'Dorei's political and economic heart — and the base of operations for Vox Machina.",
+      "imageUrl": "examples/images/region-bladeshimmer.jpg",
+      "position": { "x": 18, "y": 62 },
+      "attributes": {
+        "Type": "Coastal Region",
+        "Capital": "Emon",
+        "Features": "Trade coast, fishing villages, ruins"
+      },
+      "tags": ["Coast", "Emon", "Trade", "Bladeshimmer", "Tal'Dorei"],
+      "gmNotes": "Bladeshimmer is the political and economic heart of Tal'Dorei. Emon sits on this coast. Greyskull Keep is within Emon's walls — placed here on the region map for navigation.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__region_alabaster__",
+      "type": "region",
+      "parentId": "__region_taldorei__",
+      "name": "Alabaster Sierras",
+      "description": "The snow-capped mountains that stretch across northern Tal'Dorei. Harsh, beautiful, and remote — the Sierras shelter resilient mountain settlements and ancient ruins beneath their pale peaks. Whitestone, the ancestral domain of the de Rolo family, is the region's most significant city-state. It has been sealed off from the rest of Tal'Dorei under Briarwood occupation.",
+      "imageUrl": "examples/images/region-alabaster.jpg",
+      "position": { "x": 62, "y": 24 },
+      "attributes": {
+        "Type": "Mountain Range",
+        "Notable City-State": "Whitestone",
+        "Named For": "The pale white stone of the peaks"
+      },
+      "tags": ["Mountains", "Whitestone", "Snow", "Alabaster", "de Rolo"],
+      "gmNotes": "Reaching Whitestone requires traversing dangerous mountain passes or magical transport. The region is sparsely populated — Whitestone is essentially an isolated pocket of civilization.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__loc_emon__",
+      "type": "location",
+      "parentId": "__region_bladeshimmer__",
+      "name": "Emon",
+      "description": "The gleaming capital of Tal'Dorei — a city of hundreds of thousands built on trade, magic, and political ambition. Emon's skyline is dominated by the Cloudtop District, where wealthy nobles and powerful mages reside. At its heart sits the Palace of the Sovereign, where the Tal'Dorei Council governs. For Vox Machina, Emon is home base, employer, and the place where the Briarwood conspiracy first reveals itself.",
+      "imageUrl": "examples/images/loc-emon.png",
+      "position": { "x": 44, "y": 58 },
+      "attributes": {
+        "Type": "City-State / Capital",
+        "Population": "~400,000",
+        "Ruler": "Sovereign Uriel Tal'Dorei III",
+        "Districts": "Cloudtop, Erudite Quarter, Greystone, Braving Grounds"
+      },
+      "tags": ["Capital", "Tal'Dorei", "Emon", "Council", "Vox Machina Home"],
+      "gmNotes": "Emon is where Vox Machina begins Season 1 and where their confrontation with the Briarwoods first erupts. The Council dinner scene (Episodes 3–4) is the story's turning point.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__loc_greyskull__",
+      "type": "location",
+      "parentId": "__region_bladeshimmer__",
+      "name": "Greyskull Keep",
+      "description": "A sturdy fortress keep within the city of Emon, earned by Vox Machina as a reward for their service to the Tal'Dorei Council. The keep is the party's home: a great hall for planning, a courtyard for training, a cellar full of ale, and private quarters for each member. It is the one place in the world where all seven adventurers belong.",
+      "imageUrl": "examples/images/loc-greyskull-keep.jpg",
+      "position": { "x": 58, "y": 44 },
+      "attributes": {
+        "Type": "Fortress Keep",
+        "Owner": "Vox Machina",
+        "Location": "Within Emon, Tal'Dorei",
+        "Features": "Great hall, courtyard, cellar, private quarters"
+      },
+      "tags": ["Base", "Vox Machina", "Emon", "Keep", "Home"],
+      "gmNotes": "Greyskull Keep was awarded after Vox Machina won a grand melee tournament commissioned by the Council. All seven party members are based here during Season 1. The keep represents found family and a place worth fighting to return to.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__loc_whitestone__",
+      "type": "location",
+      "parentId": "__region_alabaster__",
+      "name": "Whitestone",
+      "description": "A city-state of roughly nine thousand souls, built from and named for the pale stone of the Alabaster Sierras. Once prosperous and enlightened under the de Rolo family's benevolent rule, Whitestone was violently seized five years ago by Lord and Lady Briarwood, who murdered almost the entire noble house and subjugated the population. The city now lives under a fog of terror — its people cowed, its central tree desecrated with the bodies of dissenters.",
+      "imageUrl": "examples/images/loc-whitestone.png",
+      "position": { "x": 42, "y": 55 },
+      "attributes": {
+        "Type": "City-State",
+        "Population": "~9,000",
+        "Current Rulers": "Lord & Lady Briarwood (usurpers)",
+        "Legitimate Heir": "Percival de Rolo III",
+        "Status": "Under occupation"
+      },
+      "tags": ["Whitestone", "Briarwoods", "de Rolo", "Occupied", "Season 1 Main Arc"],
+      "gmNotes": "Whitestone is the central location of Season 1 Episodes 5–12. Sub-locations of note: the Sun Tree (Dawnfather Square), Castle Whitestone, and the hidden Ziggurat beneath the city. The liberation of Whitestone is the season's emotional and narrative climax.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__fac_vox_machina__",
+      "type": "faction",
+      "parentId": null,
+      "name": "Vox Machina",
+      "description": "Seven adventurers who have fought, bled, and laughed together for years — a found family of misfits who stumbled into heroism and never quite left. Officially recognized as Champions of Emon by the Tal'Dorei Council, Vox Machina is known for creative solutions, dramatic overconfidence, and an uncanny ability to succeed when the odds are worst. Their bond is their greatest weapon.",
+      "imageUrl": "examples/images/fac-vox-machina.jpg",
+      "position": { "x": 50, "y": 75 },
+      "attributes": {
+        "Type": "Adventuring Party",
+        "Base": "Greyskull Keep, Emon",
+        "Status": "Active",
+        "Title": "Champions of Emon",
+        "Members": "Vex'ahlia, Vax'ildan, Percy, Keyleth, Pike, Scanlan, Grog"
+      },
+      "tags": ["Party", "Vox Machina", "Heroes", "Emon", "Champions"],
+      "gmNotes": "The seven members each have distinct personalities, backstories, and arcs. Season 1 is primarily Percy's story, but every character is meaningfully involved. Art by Joe Madureira for the animated series.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__fac_taldorei_council__",
+      "type": "faction",
+      "parentId": "__loc_emon__",
+      "name": "Tal'Dorei Council",
+      "description": "The governing body of the Tal'Dorei republic, convening in Emon under the leadership of Sovereign Uriel Tal'Dorei III. The Council manages law, military affairs, and diplomacy across the continent. Its members include military commanders, prominent citizens, and powerful mages — among them Lady Allura Vysoren, who is Vox Machina's most important ally within the Council.",
+      "imageUrl": null,
+      "position": { "x": 38, "y": 30 },
+      "attributes": {
+        "Type": "Republican Council / Government",
+        "Leader": "Sovereign Uriel Tal'Dorei III",
+        "Location": "Emon, Tal'Dorei"
+      },
+      "tags": ["Government", "Emon", "Tal'Dorei", "Council", "Politics"],
+      "gmNotes": "The Council employs Vox Machina in Episode 1. During the Briarwood visit (Episodes 3–4), the Council is largely blind to the danger — their trust in diplomacy nearly becomes a fatal mistake.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__fac_briarwood__",
+      "type": "faction",
+      "parentId": "__loc_whitestone__",
+      "name": "The Briarwood Conspiracy",
+      "description": "An inner circle of vampiric power, necromantic servants, and manipulated nobles operating beneath the surface of Whitestone's occupation. Lord Sylas and Lady Delilah Briarwood are the core, but their network includes undead soldiers, corrupt guards, and civilian informants. Their ultimate goal has nothing to do with ruling Whitestone — the city is merely a vessel for a far darker ritual.",
+      "imageUrl": null,
+      "position": { "x": 60, "y": 65 },
+      "attributes": {
+        "Type": "Villainous Conspiracy",
+        "Leaders": "Lord Sylas & Lady Delilah Briarwood",
+        "Patron Deity": "The Whispered One (Vecna)",
+        "True Goal": "Charge the Whitestone Ziggurat to hasten Vecna's resurrection"
+      },
+      "tags": ["Villains", "Briarwoods", "Necromancy", "Vecna", "Whitestone"],
+      "gmNotes": "The Briarwood Conspiracy is the Season 1 main antagonist faction. Sylas is their muscle and face; Delilah is the mind. Their plot ties to a campaign-wide threat involving Vecna the Whispered One — seeds planted for much later arcs.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_vex__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Vex'ahlia",
+      "description": "A half-elf ranger from Tal'Dorei — sharp-tongued, quick-eyed, and fiercely practical. Vex and her twin brother Vax'ildan were raised between their cold elven father's household and a small human village; neither world fully claimed them. She found purpose in her bow, her bear companion Trinket, and the family she built within Vox Machina. Vex has a complicated relationship with wealth and value — a wound left by a father who made her feel worth nothing.",
+      "imageUrl": "examples/images/npc-vex.jpg",
+      "position": { "x": 20, "y": 35 },
+      "attributes": {
+        "Race": "Half-Elf",
+        "Class": "Ranger (Hunter / Slayer)",
+        "Player": "Laura Bailey",
+        "Companion": "Trinket (brown bear)",
+        "Twin": "Vax'ildan"
+      },
+      "tags": ["Party Member", "Ranger", "Half-Elf", "Twin", "Archer"],
+      "gmNotes": "Vex's obsession with money and valuables is a defense mechanism rooted in her father's rejection. She is brilliant tactically. In the Whitestone arc, her relationship with Percy becomes an important subplot.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_vax__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Vax'ildan",
+      "description": "A half-elf rogue who moves through the world in shadow and silence — the twin brother of Vex'ahlia, and her opposite in temperament. Where Vex dazzles, Vax disappears. He is introspective, deeply empathetic, and fiercely protective of those he loves. Since a near-death experience, Vax has felt the cold attention of the Matron of Ravens and carries a growing certainty that his fate is already written.",
+      "imageUrl": "examples/images/npc-vax.jpg",
+      "position": { "x": 38, "y": 22 },
+      "attributes": {
+        "Race": "Half-Elf",
+        "Class": "Rogue (Arcane Trickster / Assassin)",
+        "Player": "Liam O'Brien",
+        "Twin": "Vex'ahlia",
+        "Patron Deity": "The Matron of Ravens (Raven Queen)"
+      },
+      "tags": ["Party Member", "Rogue", "Half-Elf", "Twin", "Death-Touched"],
+      "gmNotes": "Vax is marked by the Matron of Ravens and is destined to become her Champion. This fate looms in the background of Season 1. He loves Keyleth quietly; that relationship will deepen.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_percy__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Percival de Rolo",
+      "description": "The last surviving heir of Whitestone's ruling family — a sardonic, brilliant, and haunted human who invented black powder firearms to give form to a rage that had nowhere else to go. Percy is articulate and controlled on the surface, barely so beneath. A shadow demon named Orthax feeds on his desire for revenge and grows stronger with every name crossed off his list. Returning to Whitestone will decide what kind of man Percy actually is.",
+      "imageUrl": "examples/images/npc-percy.jpg",
+      "position": { "x": 60, "y": 28 },
+      "attributes": {
+        "Race": "Human",
+        "Class": "Fighter (Gunslinger)",
+        "Player": "Taliesin Jaffe",
+        "Full Name": "Percival Fredrickstein von Musel Klossowski de Rolo III",
+        "Hometown": "Whitestone",
+        "Shadow Pact": "Orthax (revenge demon)"
+      },
+      "tags": ["Party Member", "Gunslinger", "de Rolo", "Whitestone", "Revenge", "Orthax"],
+      "gmNotes": "Percy is Season 1's emotional center. His deal with Orthax grows more dangerous as the arc progresses. The climax requires Percy to choose between revenge and redemption. Breaking The List gun breaks the pact.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_keyleth__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Keyleth",
+      "description": "A half-elf druid of the Air Ashari tribe, on a sacred coming-of-age journey called the Aramente — a rite of passage to prove her worth as the next Voice (headmaster) of her people. Keyleth is earnest, fiercely moral, and devastatingly powerful, capable of transforming into apex predators or calling down lightning from clear skies. She struggles with the weight of her destiny and finds stability in Vox Machina's chaotic love.",
+      "imageUrl": "examples/images/npc-keyleth.jpg",
+      "position": { "x": 76, "y": 44 },
+      "attributes": {
+        "Race": "Half-Elf",
+        "Class": "Druid (Circle of the Moon)",
+        "Player": "Marisha Ray",
+        "Tribe": "Air Ashari",
+        "Quest": "The Aramente (Ashari coming-of-age journey)"
+      },
+      "tags": ["Party Member", "Druid", "Half-Elf", "Air Ashari", "Aramente"],
+      "gmNotes": "Keyleth's Aramente requires visiting all four Ashari tribes and passing elemental trials. This runs parallel to the Whitestone arc. Her love for Vax is understated but central. Her nature magic is among the party's most versatile tools.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_pike__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Pike Trickfoot",
+      "description": "A gnome cleric of the Everlight (Sarenrae) — fierce in battle, tender of heart, and morally uncompromising. Pike is the conscience of Vox Machina: the one who holds the line when the others lose themselves. She descends from a cursed bloodline but has redeemed her family name through selfless devotion. Her healing and radiant magic have saved every member of the party at least once.",
+      "imageUrl": "examples/images/npc-pike.jpg",
+      "position": { "x": 70, "y": 64 },
+      "attributes": {
+        "Race": "Gnome",
+        "Class": "Cleric (War Domain / Life Domain)",
+        "Player": "Ashley Johnson",
+        "Deity": "The Everlight (Sarenrae)",
+        "Hometown": "Westruun"
+      },
+      "tags": ["Party Member", "Cleric", "Gnome", "Everlight", "Healer", "Moral Compass"],
+      "gmNotes": "Pike occasionally appears remotely (projected astral form) when her player has other commitments. In Season 1 she is fully present. Her bond with Grog is the most warmly sibling-like relationship in the party.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_scanlan__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Scanlan Shorthalt",
+      "description": "A gnome bard of enormous talent, enormous ego, and quietly enormous heart. Scanlan is the party's wildcard — inventive, flirtatious, and prone to creative spellcasting that shouldn't work but inexplicably does. He deploys a silver tongue, a bardic shout that rattles teeth, and self-deprecating humor as shields against a loneliness he doesn't often admit to. He is better than he pretends and sadder than he shows.",
+      "imageUrl": "examples/images/npc-scanlan.jpg",
+      "position": { "x": 50, "y": 70 },
+      "attributes": {
+        "Race": "Gnome",
+        "Class": "Bard (College of Lore)",
+        "Player": "Sam Riegel",
+        "Signature Item": "Hand Cone of Clarity",
+        "Secret": "Has a daughter (Kaylie) he has never met"
+      },
+      "tags": ["Party Member", "Bard", "Gnome", "Clever", "Comic Relief"],
+      "gmNotes": "Scanlan's daughter Kaylie becomes a major emotional thread later. In Season 1, focus on his surprising heroism at critical moments — the times his absurdity is exactly what saves the day.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_grog__",
+      "type": "npc",
+      "parentId": "__loc_greyskull__",
+      "name": "Grog Strongjaw",
+      "description": "A goliath barbarian of earth-shaking power and open-hearted wonder. Grog cannot read, does not strategize, and resolves most problems by hitting them very hard — but he is among the most loyal, loving, and emotionally honest members of Vox Machina. Exiled from the Herd of Storms by his uncle Kevdak for sparing a gnomish stranger (Pike), Grog found his real family in a band of misfits with too many enemies and not enough sense.",
+      "imageUrl": "examples/images/npc-grog.jpg",
+      "position": { "x": 26, "y": 64 },
+      "attributes": {
+        "Race": "Goliath",
+        "Class": "Barbarian (Path of the Berserker)",
+        "Player": "Travis Willingham",
+        "Clan": "Herd of Storms (exiled)",
+        "Best Friend": "Pike Trickfoot"
+      },
+      "tags": ["Party Member", "Barbarian", "Goliath", "Tank", "Berserker"],
+      "gmNotes": "Grog's uncle Kevdak and the Herd of Storms are relevant in Season 2. In Season 1, his arc is about loyalty and learning to trust the party in dark moments. His bond with Pike is the emotional heart of his character.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_allura__",
+      "type": "npc",
+      "parentId": "__loc_emon__",
+      "name": "Lady Allura Vysoren",
+      "description": "A measured and formidable human archmage who sits on the Tal'Dorei Council. Allura has deep knowledge of arcane history and an unspoken familiarity with the kinds of ancient dark threats that the rest of the Council prefers not to believe in. She is one of the first to understand that the Briarwoods represent something truly dangerous, and she quietly provides Vox Machina with intelligence, resources, and magical support that official channels cannot offer.",
+      "imageUrl": "examples/images/npc-allura.jpg",
+      "position": { "x": 62, "y": 35 },
+      "attributes": {
+        "Race": "Human",
+        "Class": "Wizard (Archmage)",
+        "Role": "Tal'Dorei Council Member",
+        "Partner": "Kima of Vord (holy warrior of Bahamut)"
+      },
+      "tags": ["Ally", "Wizard", "Council", "Archmage", "Emon"],
+      "gmNotes": "Allura and Kima are a couple — their relationship is a quiet, warm thread throughout the campaign. Allura has deep knowledge of threats like the Chroma Conclave and the Whispered One. Her trust in Vox Machina is earned, not given.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_cassandra__",
+      "type": "npc",
+      "parentId": "__loc_whitestone__",
+      "name": "Cassandra de Rolo",
+      "description": "The youngest surviving member of the de Rolo family — a young woman who has spent years as a prisoner of the Briarwoods, kept alive as leverage and forced to serve her family's murderers. Cassandra has endured by being useful, by watching, and by hoping. She carries deep guilt about the compromises she has made. Her reunion with Percy — the brother she thought dead — is the most painful and most healing moment of the Whitestone arc.",
+      "imageUrl": "examples/images/npc-cassandra.jpg",
+      "position": { "x": 42, "y": 30 },
+      "attributes": {
+        "Race": "Human",
+        "Role": "de Rolo Prisoner / Heir",
+        "Family": "House de Rolo",
+        "Status": "Captive, forced servant of the Briarwoods"
+      },
+      "tags": ["Ally", "de Rolo", "Whitestone", "Prisoner", "Survivor"],
+      "gmNotes": "Cassandra's survival is crucial to Whitestone's future. After the Briarwoods are defeated, she becomes the ruling Lady of Whitestone. Her reunion with Percy — and what she was forced to do under the Briarwoods — is a deeply emotional scene.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_sylas__",
+      "type": "npc",
+      "parentId": "__loc_whitestone__",
+      "name": "Lord Sylas Briarwood",
+      "description": "A vampire lord who rules Whitestone with a gracious smile and an iron fist. Sylas presents as a cultured nobleman — elegant, articulate, generous with compliments — and reveals the predator beneath only when pressed. He is supernaturally charming, physically devastating, and utterly devoted to his wife Delilah. Without her, he has no ideology, no purpose, no plan — only love, ambition, and hunger.",
+      "imageUrl": "examples/images/npc-sylas.jpg",
+      "position": { "x": 28, "y": 55 },
+      "attributes": {
+        "Race": "Human (Vampire Lord)",
+        "Class": "Vampire / Fighter",
+        "Role": "Co-Ruler of Whitestone (usurper)",
+        "Spouse": "Lady Delilah Briarwood",
+        "Abilities": "Vampiric domination, supernatural strength, life drain"
+      },
+      "tags": ["Villain", "Vampire", "Briarwood", "Whitestone", "Antagonist"],
+      "gmNotes": "Sylas is dangerous in combat but emotionally dependent on Delilah — she is the architect, he is the instrument. A phylactery may bind his vampiric existence; destroying it is one route to permanently ending him.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_delilah__",
+      "type": "npc",
+      "parentId": "__loc_whitestone__",
+      "name": "Lady Delilah Briarwood",
+      "description": "The true architect of everything — a necromancer of terrifying brilliance who bargained with the Whispered One (Vecna) for the power to resurrect her dying husband, and has spent years fulfilling her end of that bargain. Lady Delilah is cold, methodical, and utterly convinced that what she is doing is justified. She constructed the Ziggurat beneath Whitestone to channel ley line energy toward her patron's resurrection. She is the real villain of Season 1.",
+      "imageUrl": "examples/images/npc-delilah.jpg",
+      "position": { "x": 52, "y": 50 },
+      "attributes": {
+        "Race": "Human",
+        "Class": "Wizard (Necromancer) / Warlock",
+        "Role": "Co-Ruler of Whitestone (usurper)",
+        "Patron": "The Whispered One (Vecna)",
+        "Goal": "Complete the Ziggurat ritual to advance Vecna's resurrection"
+      },
+      "tags": ["Villain", "Necromancer", "Briarwood", "Vecna", "Whitestone", "Mastermind"],
+      "gmNotes": "Delilah is the primary intelligence behind Season 1. Her deal with Vecna ties the Whitestone arc to the larger campaign threat. She survives beyond Season 1 and continues to serve the Whispered One, becoming relevant again much later.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__npc_ripley__",
+      "type": "npc",
+      "parentId": "__loc_whitestone__",
+      "name": "Dr. Anna Ripley",
+      "description": "A brilliant, pragmatic, and wholly amoral engineer who was present the night the de Rolo family was slaughtered — and who made the calculated decision to survive by being useful to the Briarwoods. Ripley provided technical knowledge and firearms expertise to the occupiers, earning a position of relative privilege in Whitestone's prison. Her name is on Percy's List. She treats even captivity as a resource to be leveraged.",
+      "imageUrl": "examples/images/npc-ripley.png",
+      "position": { "x": 66, "y": 36 },
+      "attributes": {
+        "Race": "Human",
+        "Class": "Rogue / Artificer",
+        "Role": "Briarwood Associate, Gunsmith",
+        "Status": "On Percy's List",
+        "Specialty": "Black powder firearms and mechanical engineering"
+      },
+      "tags": ["Villain", "Gunsmith", "Briarwood Associate", "The List", "Whitestone"],
+      "gmNotes": "Ripley is opportunistic rather than ideological — she serves whoever keeps her alive and useful. Her arc extends into Season 2, where she becomes a major antagonist in her own right, reverse-engineering Percy's firearms to terrible effect.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__item_bad_news__",
+      "type": "item",
+      "parentId": "__loc_whitestone__",
+      "name": "Bad News",
+      "description": "Percy's masterwork long-range rifle — a single-shot black powder weapon of devastating power, capable of piercing armor from extraordinary range. The shot from Bad News carries an earth-shaking report that serves as both warning and verdict. Slower than the pepperbox but far more final, Bad News was built for a specific kind of patience: the kind that crosses a room, sits down, and waits.",
+      "imageUrl": null,
+      "position": { "x": 72, "y": 55 },
+      "attributes": {
+        "Type": "Firearm (Single-Shot Rifle)",
+        "Owner": "Percival de Rolo",
+        "Range": "Exceptional (100/300 ft)",
+        "Properties": "Misfire (1–2), Reload, Thunderous Shot"
+      },
+      "tags": ["Weapon", "Firearm", "Percy", "Gunslinger", "Black Powder"],
+      "gmNotes": "Bad News is used to devastating effect during the Whitestone campaign. Its thunderclap report signals Percy's arrival and is psychologically effective against the Briarwood forces, who have never seen firearms.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__item_the_list__",
+      "type": "item",
+      "parentId": "__loc_greyskull__",
+      "name": "The List",
+      "description": "Percy's pepperbox pistol — a six-barreled rotating firearm of his own design, each barrel engraved with the name of someone responsible for the murders of his family. The gun is not entirely natural; a dark smoke curls from it in quiet moments. The demon Orthax feeds on Percy's rage through this weapon, and the gun grows more volatile as names are crossed off. The List is not just a weapon. It is a contract.",
+      "imageUrl": null,
+      "position": { "x": 55, "y": 55 },
+      "attributes": {
+        "Type": "Firearm (Pepperbox Pistol)",
+        "Owner": "Percival de Rolo",
+        "Barrels": "6 (each named for a target on the list)",
+        "Enchantment": "Cursed — Bound to Orthax (shadow demon pact)"
+      },
+      "tags": ["Weapon", "Firearm", "Percy", "Cursed", "Orthax", "Revenge"],
+      "gmNotes": "The List is the visual centerpiece of Percy's arc. The smoke intensifies as the Whitestone arc progresses. At the climax, Orthax fully manifests through Percy. Breaking the gun breaks the pact — Percy must choose to let go of his revenge.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__item_delilahs_grimoire__",
+      "type": "item",
+      "parentId": "__loc_whitestone__",
+      "name": "Delilah's Grimoire",
+      "description": "The spellbook of Lady Delilah Briarwood — bound in black leather, etched with necrotic sigils, and heavy with the accumulated obsession of years. The grimoire contains Delilah's theoretical framework for the Ziggurat ritual, her research into the ley lines beneath Whitestone, and fragments of doctrine from the Whispered One. It is a complete record of everything she knows and everything she has done to know it.",
+      "imageUrl": null,
+      "position": { "x": 35, "y": 70 },
+      "attributes": {
+        "Type": "Spellbook / Ritual Tome",
+        "Owner": "Lady Delilah Briarwood",
+        "Contents": "Necromancy, Ley line theory, Ziggurat ritual schematics, Vecna's doctrine"
+      },
+      "tags": ["Artifact", "Necromancy", "Spellbook", "Delilah", "Vecna", "Ziggurat"],
+      "gmNotes": "The Grimoire is a treasure trove of forbidden knowledge. A wizard who studies it gains access to powerful necromantic spells — but doing so risks corruption by the Whispered One's lingering influence. Handle carefully.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__quest_emon_farmlands__",
+      "type": "quest",
+      "parentId": "__loc_emon__",
+      "name": "The Monster of Emon Farmlands",
+      "description": "Vox Machina's first commissioned job for the Tal'Dorei Council: investigate and destroy the creature terrorizing the farming settlements outside Emon's walls. The culprit is more dangerous than expected, and the party's success earns them more than gold — the Council rewards them with the deed to Greyskull Keep, cementing their position as official champions of Emon.",
+      "imageUrl": null,
+      "position": { "x": 30, "y": 68 },
+      "attributes": {
+        "Episodes": "1–2",
+        "Status": "Completed",
+        "Client": "Tal'Dorei Council",
+        "Reward": "Greyskull Keep (deed)"
+      },
+      "tags": ["Quest", "Season 1", "Emon", "Opening Arc", "Completed"],
+      "gmNotes": "This quest is the setup — it establishes Vox Machina's relationship with the Council, introduces Allura, and makes Greyskull Keep their home. The tone here is lighter before the Briarwood arc's darkness.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__quest_whitestone__",
+      "type": "quest",
+      "parentId": "__loc_whitestone__",
+      "name": "Retake Whitestone",
+      "description": "After a disastrous confrontation with the Briarwoods during their diplomatic visit to Emon, Vox Machina follows Percy into the Alabaster Sierras to liberate his occupied homeland. What begins as revenge becomes something more complicated: fighting through Briarwood soldiers, uncovering the Ziggurat ritual, navigating Percy's psychological unraveling, and finally confronting Lord and Lady Briarwood in the heart of Whitestone Castle.",
+      "imageUrl": null,
+      "position": { "x": 45, "y": 78 },
+      "attributes": {
+        "Episodes": "5–12",
+        "Status": "Completed",
+        "Goal": "Liberate Whitestone / Destroy the Briarwoods",
+        "Complication": "Percy's pact with Orthax grows more dangerous with every kill"
+      },
+      "tags": ["Quest", "Season 1", "Main Arc", "Whitestone", "Briarwoods", "Percy"],
+      "gmNotes": "The Season 1 main quest. Success is a genuine victory — the Briarwoods are defeated (temporarily), Whitestone is freed, Cassandra survives, and Percy breaks his deal with Orthax. The Ziggurat and Vecna threads remain for later.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__event_briarwood_visit__",
+      "type": "event",
+      "parentId": "__loc_emon__",
+      "name": "The Briarwoods' Visit to Emon",
+      "description": "Lord and Lady Briarwood arrive in Emon as distinguished guests of the Tal'Dorei Council. At a formal dinner in the Palace, Percy recognizes them — his composure cracks, the party intervenes, and a supernatural confrontation erupts. The Briarwoods demonstrate their power and depart, leaving Vox Machina shaken and the Council embarrassed. Everything that follows in Season 1 begins here.",
+      "imageUrl": null,
+      "position": { "x": 65, "y": 58 },
+      "attributes": {
+        "Episodes": "3–4",
+        "Type": "Political Incident / Escalating Combat",
+        "Outcome": "Briarwoods escape; Vox Machina resolves to pursue them to Whitestone"
+      },
+      "tags": ["Event", "Briarwoods", "Emon", "Turning Point", "Season 1"],
+      "gmNotes": "The dinner scene is the story's pivot. Percy's loss of control is the first crack in his facade. The party's failure to stop the Briarwoods here motivates the Whitestone arc and reveals how dangerous the enemy truly is.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__event_sacking__",
+      "type": "event",
+      "parentId": "__loc_whitestone__",
+      "name": "The Sacking of Castle Whitestone",
+      "description": "Five years before the campaign: Lord and Lady Briarwood arrived in Whitestone under the guise of diplomacy and systematically massacred the de Rolo family — parents, siblings, cousins, servants. Nearly everyone was killed. Percy was thrown from a cliff and left for dead; he escaped. Cassandra was kept alive as a prisoner. The Briarwoods seized the city and sealed it off from the rest of Tal'Dorei, beginning the dark occupation.",
+      "imageUrl": null,
+      "position": { "x": 25, "y": 40 },
+      "attributes": {
+        "Date": "5 Years Before Season 1",
+        "Type": "Historical Backstory / Tragedy",
+        "Perpetrators": "Lord & Lady Briarwood",
+        "Survivors": "Percival de Rolo (fled), Cassandra de Rolo (captured)"
+      },
+      "tags": ["Event", "Historical", "de Rolo", "Briarwoods", "Backstory", "Tragedy"],
+      "gmNotes": "This event is told through Percy's memories and flashbacks. It is the emotional foundation of Season 1. Every character's motivation to stand with Percy in Whitestone connects back to what happened here.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__event_liberation__",
+      "type": "event",
+      "parentId": "__loc_whitestone__",
+      "name": "The Liberation of Whitestone",
+      "description": "Vox Machina's climactic assault on Whitestone: rallying the occupied populace, fighting through Briarwood forces across the city, confronting Anna Ripley, and finally descending into the Ziggurat where Delilah's ritual nears completion. Percy faces Orthax directly and chooses to break The List rather than let the demon complete its possession. The Briarwoods are defeated. Whitestone is free.",
+      "imageUrl": null,
+      "position": { "x": 75, "y": 75 },
+      "attributes": {
+        "Episodes": "9–12",
+        "Type": "Military Assault / Personal Reckoning",
+        "Outcome": "Victory — Whitestone liberated, Briarwoods defeated, Orthax banished",
+        "New Ruler": "Cassandra de Rolo"
+      },
+      "tags": ["Event", "Victory", "Liberation", "Whitestone", "Season 1 Climax", "Orthax"],
+      "gmNotes": "The liberation is the Season 1 peak. Percy's arc is resolved (temporarily — Orthax returns). Cassandra takes the de Rolo seat. Delilah's Ziggurat ritual is disrupted but not destroyed — the seeds of Vecna's return are planted.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__note_suntree__",
+      "type": "note",
+      "parentId": "__loc_whitestone__",
+      "name": "The Sun Tree",
+      "description": "An ancient, towering tree at the center of Whitestone's main plaza — Dawnfather Square — sacred to the god Pelor (the Dawnfather) and the spiritual heart of the city. The Briarwoods have desecrated it: the bodies of citizens who resisted them hang from its branches as a warning. To the people of Whitestone, the Sun Tree represents everything the Briarwoods have taken. Restoring it will signal the city's rebirth.",
+      "imageUrl": "examples/images/loc-suntree.jpg",
+      "position": { "x": 48, "y": 38 },
+      "attributes": {
+        "Type": "Sacred Landmark",
+        "Deity": "Pelor / The Dawnfather",
+        "Status": "Desecrated under Briarwood occupation",
+        "Location": "Dawnfather Square, Whitestone"
+      },
+      "tags": ["Sacred", "Pelor", "Whitestone", "Landmark", "Symbol"],
+      "gmNotes": "The Sun Tree is a powerful narrative symbol throughout the Whitestone arc. Its desecration shows the Briarwoods' cruelty. Vox Machina's decision about how to restore it — and Keyleth's role in doing so — is an emotional high point of the season.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    },
+    {
+      "id": "__note_campaign__",
+      "type": "note",
+      "parentId": null,
+      "name": "Campaign Notes — Season 1",
+      "description": "Reference overview for Season 1 of The Legend of Vox Machina.",
+      "imageUrl": null,
+      "position": { "x": 88, "y": 15 },
+      "attributes": {
+        "Episodes": "12",
+        "Premiere": "February 4, 2022 (Amazon Prime Video)",
+        "DM / Creator": "Matthew Mercer",
+        "Source": "Critical Role Campaign One (C1, 2015–2017)"
+      },
+      "tags": ["Notes", "Meta", "Season 1", "Campaign One"],
+      "gmNotes": "Episode breakdown:\n• Ep 1–2: The monster terrorizing Emon's farmlands. Vox Machina earns Greyskull Keep.\n• Ep 3–4: The Briarwoods visit Emon. Percy confronts his past. The party fails to stop them.\n• Ep 5–8: Journey to Whitestone. First battles in the occupied city. Percy's pact with Orthax deepens.\n• Ep 9–12: The siege of Whitestone. Confronting the Briarwoods. The Ziggurat. Liberation.\n\nKey themes: Revenge vs. redemption (Percy / Orthax), found family (the whole party), the cost of obsession, political power and its responsibilities.\n\nAll seven party members are voiced by the original Critical Role cast: Laura Bailey, Liam O'Brien, Taliesin Jaffe, Marisha Ray, Ashley Johnson, Sam Riegel, Travis Willingham.",
+      "createdAt": "2022-01-28T00:00:00.000Z",
+      "updatedAt": "2022-01-28T00:00:00.000Z"
+    }
+  ]
+}
