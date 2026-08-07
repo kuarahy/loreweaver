@@ -85,12 +85,15 @@ const Sidebar = (() => {
   function _renderAttributes(entity) {
     const attrs = Object.entries(entity.attributes || {});
     if (!attrs.length) return '';
-    const rows = attrs.map(([k, v]) =>
-      `<span class="sb-attr-key">${escHtml(k)}</span><span class="sb-attr-val">${escHtml(v)}</span>`
+    const cells = attrs.map(([k, v]) =>
+      `<div class="sb-attr-cell">
+        <div class="sb-attr-key">${escHtml(k)}</div>
+        <div class="sb-attr-val">${escHtml(v)}</div>
+      </div>`
     ).join('');
     return `<div class="sb-section">
       <div class="sb-section-title">Attributes</div>
-      <div class="sb-attr-grid">${rows}</div>
+      <div class="sb-attr-grid">${cells}</div>
     </div>`;
   }
 

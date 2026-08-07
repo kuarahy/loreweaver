@@ -3,15 +3,15 @@ const Engine = (() => {
 
   // ── Type registry ────────────────────────────────────────────────────
   const TYPES = {
-    world:    { label: 'World',    icon: '🌍', color: '#6366f1' },
-    region:   { label: 'Region',   icon: '🗺️',  color: '#8b5cf6', navigable: true },
-    location: { label: 'Location', icon: '📍', color: '#06b6d4', navigable: true },
-    npc:      { label: 'NPC',      icon: '👤', color: '#10b981' },
-    faction:  { label: 'Faction',  icon: '⚔️',  color: '#f59e0b' },
-    quest:    { label: 'Quest',    icon: '📜', color: '#ef4444' },
-    item:     { label: 'Item',     icon: '💎', color: '#ec4899' },
-    event:    { label: 'Event',    icon: '⚡', color: '#f97316' },
-    note:     { label: 'Note',     icon: '📝', color: '#94a3b8' },
+    world:    { label: 'World',    icon: '🌍', color: '#c8963c' },
+    region:   { label: 'Region',   icon: '🗺️',  color: '#3a80c8', navigable: true },
+    location: { label: 'Location', icon: '📍', color: '#3ac860', navigable: true },
+    npc:      { label: 'NPC',      icon: '👤', color: '#c840c8' },
+    faction:  { label: 'Faction',  icon: '⚔️',  color: '#c85840' },
+    quest:    { label: 'Quest',    icon: '📜', color: '#c8c840' },
+    item:     { label: 'Item',     icon: '💎', color: '#40c8c8' },
+    event:    { label: 'Event',    icon: '⚡', color: '#c89640' },
+    note:     { label: 'Note',     icon: '📝', color: '#909090' },
   };
 
   const ALLOWED_CHILDREN = {

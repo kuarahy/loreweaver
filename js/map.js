@@ -91,12 +91,15 @@ const MapView = (() => {
 
   // ── Procedural background ─────────────────────────────────────────── 
   function _proceduralGradient(seed) {
-    // Deterministic hue from entity ID characters
     let h = 0;
     for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) & 0xffff;
-    const hue  = h % 360;
-    const hue2 = (hue + 40) % 360;
-    return `radial-gradient(ellipse at 30% 40%, hsl(${hue},35%,10%) 0%, hsl(${hue2},20%,6%) 100%)`;
+    // Rotate through earthy hues (green-forest, navy-deep, ember) instead of full spectrum
+    const palettes = [
+      'radial-gradient(ellipse at 28% 38%, rgba(40,60,30,0.65) 0%, transparent 52%), radial-gradient(ellipse at 68% 58%, rgba(30,30,58,0.65) 0%, transparent 48%), linear-gradient(140deg, #0e1a18 0%, #0d1020 55%, #180e0a 100%)',
+      'radial-gradient(ellipse at 35% 45%, rgba(30,50,58,0.70) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(40,28,58,0.60) 0%, transparent 45%), linear-gradient(140deg, #0a1520 0%, #0d0820 55%, #100e1a 100%)',
+      'radial-gradient(ellipse at 25% 55%, rgba(58,38,20,0.60) 0%, transparent 50%), radial-gradient(ellipse at 65% 40%, rgba(30,40,20,0.65) 0%, transparent 48%), linear-gradient(140deg, #180e08 0%, #0d1010 55%, #0e1820 100%)',
+    ];
+    return palettes[h % palettes.length];
   }
 
   // ── Click handlers ───────────────────────────────────────────────────
