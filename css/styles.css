@@ -727,3 +727,20 @@ h1, h2, h3, h4 {
 .ctx-item:hover { background: var(--surface-3); color: var(--text); }
 .ctx-item.danger { color: var(--danger); }
 .ctx-item.danger:hover { background: color-mix(in srgb, var(--danger) 15%, var(--surface-3)); }
+
+/* ─── World Manager extras ───────────────────────────────────────────── */
+#world-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+
+#world-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ─── Misc ───────────────────────────────────────────────────────────── */
+.btn-topbar:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-topbar:disabled:hover { color: var(--text-muted); border-color: var(--border); background: var(--surface-3); }

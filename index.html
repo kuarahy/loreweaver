@@ -21,8 +21,8 @@
         <div id="search-results" role="listbox" aria-live="polite"></div>
       </div>
       <div id="topbar-actions">
-        <button id="btn-add"          class="btn-topbar" title="Add entity">＋ Add</button>
-        <button id="btn-view-toggle"  class="btn-topbar" title="Toggle list / map view">⊞</button>
+        <button id="btn-nav-back"     class="btn-topbar" title="Go back" style="display:none">← Back</button>
+        <button id="btn-new-entity"   class="btn-topbar" title="Add entity" disabled>＋ Add</button>
         <button id="btn-worlds"       class="btn-topbar" title="Manage worlds">🌐 Worlds</button>
       </div>
     </header>
@@ -75,7 +75,13 @@
         <h3>Worlds</h3>
         <button id="btn-world-modal-close" class="btn-icon" title="Close">×</button>
       </div>
-      <div id="world-modal-body"></div>
+      <div id="world-modal-body">
+        <div id="world-list"></div>
+        <div id="world-modal-footer">
+          <button id="btn-import-world" class="btn-ghost">↥ Import .json</button>
+          <button id="btn-create-world" class="btn-primary">＋ New World</button>
+        </div>
+      </div>
     </div>
   </div>
 

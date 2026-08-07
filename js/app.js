@@ -72,6 +72,9 @@ const App = (() => {
     document.getElementById('btn-worlds')
       .addEventListener('click', _showWorldManager);
 
+    document.getElementById('btn-create-first-world')
+      .addEventListener('click', _showWorldManager);
+
     document.getElementById('btn-new-entity')
       .addEventListener('click', () => EntityEditor.openNew({}));
 
@@ -210,8 +213,8 @@ const App = (() => {
 
     crumb.innerHTML = parts.map((p, i) =>
       i < parts.length - 1
-        ? `<span class="crumb-seg crumb-link" data-crumb-id="${escHtml(p.id)}">${escHtml(p.name)}</span><span class="crumb-sep"> › </span>`
-        : `<span class="crumb-seg">${escHtml(p.name)}</span>`
+        ? `<span class="crumb crumb-link" data-crumb-id="${escHtml(p.id)}">${escHtml(p.name)}</span><span class="crumb-sep"> › </span>`
+        : `<span class="crumb active">${escHtml(p.name)}</span>`
     ).join('');
 
     crumb.querySelectorAll('.crumb-link').forEach(el => {
@@ -239,20 +242,20 @@ const App = (() => {
     mapView.classList.remove('active');
     listView.classList.add('active');
 
-    document.getElementById('search-results').innerHTML = results.length
+    const sr = document.getElementById('search-results');
+    sr.innerHTML = results.length
       ? results.map(e => {
           const info = Engine.getTypeInfo(e.type);
-          return `<div class="search-result" data-result-id="${escHtml(e.id)}">
-            <span class="sr-icon">${escHtml(info.icon)}</span>
-            <div class="sr-body">
-              <span class="sr-name">${escHtml(e.name)}</span>
-              <span class="sr-type">${escHtml(info.label)}</span>
-            </div>
+          return `<div class="search-item" data-result-id="${escHtml(e.id)}">
+            <span class="search-item-icon">${escHtml(info.icon)}</span>
+            <span class="search-item-name">${escHtml(e.name)}</span>
+            <span class="search-item-type">${escHtml(info.label)}</span>
           </div>`;
         }).join('')
-      : '<div class="search-empty">No results found.</div>';
+      : '<div style="padding:12px;color:var(--text-dim);font-size:14px">No results found.</div>';
+    sr.classList.add('open');
 
-    document.querySelectorAll('.search-result').forEach(el => {
+    document.querySelectorAll('.search-item').forEach(el => {
       el.addEventListener('click', async () => {
         const entity = await Engine.getEntity(el.dataset.resultId);
         if (entity) {
@@ -264,6 +267,9 @@ const App = (() => {
   }
 
   function _clearSearch() {
+    const sr = document.getElementById('search-results');
+    sr.classList.remove('open');
+    sr.innerHTML = '';
     document.getElementById('list-view').classList.remove('active');
     if (MapView.getContextId()) {
       document.getElementById('map-view').classList.add('active');
@@ -305,16 +311,16 @@ const App = (() => {
     const list   = document.getElementById('world-list');
 
     list.innerHTML = worlds.length ? worlds.map(w =>
-      `<div class="world-item ${w.id === Engine.getActiveWorldId() ? 'active' : ''}" data-world-id="${escHtml(w.id)}">
+      `<div class="world-item ${w.id === Engine.getActiveWorldId() ? 'active-world' : ''}" data-world-id="${escHtml(w.id)}">
         <div class="world-item-name">${escHtml(w.name)}</div>
         <div class="world-item-desc">${escHtml(w.description || '')}</div>
         <div class="world-item-actions">
-          <button class="btn-ghost btn-sm" data-action="open"   data-world-id="${escHtml(w.id)}">Open</button>
-          <button class="btn-ghost btn-sm" data-action="export" data-world-id="${escHtml(w.id)}">Export</button>
-          <button class="btn-danger btn-sm" data-action="delete" data-world-id="${escHtml(w.id)}">Delete</button>
+          <button class="btn-ghost" style="padding:3px 10px;font-size:12px" data-action="open"   data-world-id="${escHtml(w.id)}">Open</button>
+          <button class="btn-ghost" style="padding:3px 10px;font-size:12px" data-action="export" data-world-id="${escHtml(w.id)}">Export</button>
+          <button class="btn-danger" style="padding:3px 10px;font-size:12px" data-action="delete" data-world-id="${escHtml(w.id)}">Delete</button>
         </div>
       </div>`
-    ).join('') : '<div class="world-empty">No worlds yet. Create one below.</div>';
+    ).join('') : '<div style="padding:16px 0;color:var(--text-dim);font-size:14px">No worlds yet. Create one below.</div>';
 
     list.querySelectorAll('[data-action]').forEach(btn => {
       btn.addEventListener('click', async (e) => {
