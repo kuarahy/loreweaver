@@ -2,3 +2,5 @@ worldcraft/
 *.db
 .DS_Store
 node_modules/
+.vercel
+.cursor
