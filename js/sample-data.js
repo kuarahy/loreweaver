@@ -1,6 +1,6 @@
 // Sample world — Forgotten Realms, Sword Coast North (LMoP-style showcase)
 // Place names are used as a familiar demo; replace with your own campaign data.
-// Map: set imageUrl to /assets/maps/faerun-sword-coast.png when you add a map image.
+// Map: place your map image at assets/maps/faerun.jpg (or update imageUrl below).
 const SAMPLE_WORLD = {
   world: {
     id:          '__sample_world__',
@@ -8,7 +8,7 @@ const SAMPLE_WORLD = {
     parentId:    null,
     name:        'Faerûn — The Sword Coast',
     description: 'The western frontier of Faerûn — crowded port cities, ruined kingdoms, and wild country between Neverwinter and Baldur\'s Gate. A classic D&D sandbox.',
-    imageUrl:    '/assets/maps/faerun-sword-coast.png',
+    imageUrl:    '/assets/maps/faerun.jpg',
     position:    { x: 50, y: 50 },
     attributes:  {
       'Setting':     'Forgotten Realms',
