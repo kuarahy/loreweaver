@@ -1,16 +1,41 @@
-# LoreWeaver — Campaign Engine
+# LoreWeaver — Campaign Map
 
-A visual, interactive storyboard engine for managing tabletop RPG campaigns — or any fictional world. Generic by design: D&D, Pathfinder, homebrew, sci-fi, whatever.
+A **map-first campaign board** for tabletop RPGs. Drill from world → region → location, pin NPCs, quests, and lore, export your data as JSON. No account required.
+
+**Share it with your table:** deploy the static app (free on Vercel), optionally add a hosted backend so players open one link and explore between sessions.
 
 ---
 
 ## Getting Started
 
-Open `index.html` directly in a browser — no server required. IndexedDB handles all storage locally.
+Open `index.html` in a browser — no server required. IndexedDB stores everything locally.
 
-On first load the sample world **Eldenmoor** is automatically imported so you can explore immediately.
+On first load, a **Forgotten Realms Sword Coast** sample is imported automatically so you can explore how the tool works.
 
-To switch to hosted/REST storage, append `?mode=hosted&api=https://your-backend/api` to the URL.
+### Add your map image
+
+1. Copy a map PNG into `assets/maps/faerun-sword-coast.png` (or any filename).
+2. Set the **Image URL** on the world or region entity — e.g. `/assets/maps/faerun-sword-coast.png`.
+3. Drag markers to align with your map.
+
+Use maps you have the right to use. LoreWeaver does not ship copyrighted map art.
+
+---
+
+## Sample world
+
+The bundled demo covers **Faerûn — The Sword Coast** with one detailed region (**Sword Coast North** / *Lost Mine of Phandelver*–style):
+
+- World map with major coast cities as pins
+- Phandalin, Triboar Trail, Cragmaw Castle, Wave Echo Cave, Redbrand Hideout
+- NPCs, factions, quests, items, events, and a welcome note
+- All 9 entity types represented
+
+Place names are familiar D&D reference points for the demo only — **export and replace** with your own campaign.
+
+Also available as import file: `samples/sword-coast.loreweaver.json`
+
+> **Critical Role / Vox Machina:** Characters and story are Critical Role IP — not included as bundled sample data. You can import your own CR campaign via Worlds → Import once you build it.
 
 ---
 
@@ -58,16 +83,22 @@ Navigable entities (Region, Location) can be drilled into — left-clicking them
 
 ## Data Storage
 
-- **Local mode** (default): IndexedDB, persists in the browser indefinitely.
-- **Hosted mode** (`?mode=hosted&api=...`): REST adapter, same static files.
+- **Local mode** (default): IndexedDB, persists in your browser.
+- **Hosted mode** (coming soon): share a link with your players — reference backend in progress.
 
-**Export / Import**: open the 🌐 Worlds panel → Export saves a `.loreweaver.json` file; Import loads one back. Export regularly as a backup since browser storage can be cleared.
+**Export / Import**: 🌐 Worlds → Export saves a `.loreweaver.json` file; Import loads one back. Export regularly as backup.
 
 ---
 
-## Custom Map Images
+## Deploy for your group
 
-Set the **Image URL** field on any World, Region, or Location to use a real map as the background. Markers sit on top at their percentage-based coordinates — drag them to reposition after changing the image.
+Static deploy (map only, each person’s browser stores data locally):
+
+```bash
+npx vercel deploy --prod
+```
+
+Hosted shared campaign (GM edits, players read the same world) — see `HOSTING.md` when available.
 
 ---
 
@@ -75,17 +106,12 @@ Set the **Image URL** field on any World, Region, or Location to use a real map 
 
 ```
 loreweaver/
-├── index.html          # App shell and script load order
-├── css/
-│   └── styles.css      # Dark fantasy UI (navy + gold)
+├── index.html
+├── assets/maps/        # Your campaign map images
+├── samples/            # Importable .loreweaver.json files
+├── css/styles.css
 ├── js/
-│   ├── utils.js        # escHtml(), ContextMenu singleton
-│   ├── store.js        # IndexedDB LocalAdapter, REST ServerAdapter
-│   ├── engine.js       # Entity CRUD, hierarchy, world-entity index
-│   ├── map.js          # Map canvas, markers, zoom animation, drag
-│   ├── sidebar.js      # Entity detail panel
-│   ├── editor.js       # Create / edit / delete entity modal
-│   ├── sample-data.js  # Starter world (Eldenmoor)
-│   └── app.js          # Bootstrap, navigation stack, search, world manager
+│   ├── sample-data.js  # Sword Coast sample (first-run import)
+│   └── …
 └── README.md
 ```
