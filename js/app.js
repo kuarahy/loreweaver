@@ -16,6 +16,8 @@ const App = (() => {
 
     if (worlds.length === 0) {
       await _loadSampleData();
+    } else {
+      await _upgradeSampleIfStale(worlds);
     }
 
     const startWorlds = await Engine.getAllWorlds();
@@ -405,6 +407,16 @@ const App = (() => {
   // ── Sample data ────────────────────────────────────────────────────────
   async function _loadSampleData() {
     await Engine.importWorld(SAMPLE_WORLD);
+  }
+
+  // Replace stale bundled sample (Eldenmoor → Sword Coast) on existing installs.
+  // Keyed on SAMPLE_WORLD.world.name so user-renamed worlds are never touched.
+  async function _upgradeSampleIfStale(worlds) {
+    const STALE_NAMES = ['Eldenmoor'];
+    const stale = worlds.find(w => STALE_NAMES.includes(w.name));
+    if (!stale) return;
+    await Engine.deleteEntity(stale.id);
+    await _loadSampleData();
   }
 
   return { init };
